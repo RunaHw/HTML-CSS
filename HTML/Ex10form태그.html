@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 입력 양식 지정 form태그 -->
+    <!-- action : form태그 안에 있는 데이터들을 전달하는 url -->
+    <form action="#">
+        <input type="text" placeholder="아이디 입력" value="asdasdasd" maxlength="20" readonly>
+        </br>
+        <input type="text" autofocus>
+        <!-- 
+            type="text" : 데이터를 입력할 수 있는 태그
+            1) placeholder : 미리보기 텍스트 지정
+            2) value : 기본 값 지정
+            3) maxlength : 최대 글자수 제한
+            4) autofocus : 자동커서 설정
+            5) readonly : 입력받을 수 없고 읽기만 가능 
+         -->
+        </br>
+        <!-- 비밀번호를 입력할 수 있는 태그 -->
+        <input type="password" maxlength="20">
+        </br>
+        <!-- 파일 업로드 태그 -->
+        <input type="file">
+        </br>
+        <!-- 색깔 선택 태그 -->
+        <input type="color">
+        </br>
+        <!-- 년, 월, 일 선택 태그 -->
+        <input type="date">
+        </br>
+        <!-- 년, 월, 일 시간 선택 태그 -->
+        <input type="datetime-local">
+        <br>
+        <!-- 중복선택이 가능할 때 사용하는 태그 -->
+        초밥🍣<input type="checkbox">
+        치킨🍗<input type="checkbox">
+        피자🍕<input type="checkbox">
+        <br>
+        <!-- radio 버튼을 사용할 때는 중복으로 선택이 되는 것을 방지하기 위해서 name attribute를 사용!!
+             **동일한 값을 넣어주면 중복 선택을 방지! -->
+        남성<input type="radio" name="gender" value="male">
+        여성<input type="radio" name="gender" value="female">
+        <br>
+        <!-- 범위를 설정하는 태그 -->
+        <input type="range">
+        <br>
+        <!-- 숫자를 입력하는 태그 -->
+        <input type="number">
+        <br>
+        <!-- 리스트 형태로 데이터를 출력해주는 태그 -->
+        <!-- 
+            1) datalist 사용하는 방법
+            2) select 사용하는 방법
+            * 차이점은 datalist는 입력이 가능
+            * select는 입력이 불가능
+         -->
+        <input type="text" list="song">
+        <datalist id="song">
+            <option value="이브, 프리케 그리고 푸른수염의 아내"></option>
+            <option value="너의 모든 순간"></option>
+            <option value="그라데이션"></option>
+        </datalist>
+   
+        <br>
+        <select name="" id="">
+            <option value="">Java</option>
+            <option value="">SQL</option>
+            <option value="">Python</option>
+            <option value="">HTML/CSS</option>
+        </select>
+
+        <br>
+        <!-- 입력한 데이터를 초기화 시키는 태그 -->
+        <input type="reset">
+        <!-- 입력한 데이터를 특정 주소로 제출하는 태그 -->
+        <input type="submit">
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        *{
+            color: blue;
+        }
+        p {
+            color: red;
+        }
+
+        .food{
+            color: yellow;
+        }
+        
+        #burger{
+            color: green;
+        }
+
+        #rule{
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS 활용하기</h1>
+    <p>오늘의 점심메뉴</p>
+
+    <ul>
+        <!-- id는 고유의 값! 중복이 불가능 -->
+        <!-- class는 중복이 가능하다 -->
+        <li id="burger">햄버거🍔</li>
+        <li class="food">도시락🍱</li>
+        <li class="food">육회비빔밥🥩</li>
+    </ul>
+
+    <ol id="rule">
+        <li>스트레칭 잘하기</li>
+        <li>쉬는시간 잘지키기</li>
+        <li>지각하지 않기</li>
+    </ol>
+    
+</body>
+</html>
