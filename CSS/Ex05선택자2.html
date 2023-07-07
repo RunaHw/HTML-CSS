@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 계층선택자 */
+
+        /* (1) 자손선택자 
+               기호 : (띄어쓰기) */
+        /* (1-1) div를 기준으로 자손인 span의 색을 tomato */
+        /* (1-2) div를 기준으로 자손인 li의 색을 blue */        
+                
+
+        /* (2) 자식선택자 
+               기호 : > */
+
+        /* (3) 근접후행선택자 
+               기호 : + */
+
+        /* (4) 후행선택자 
+                기호 : ~ */
+        div span{
+            color: tomato;
+            
+        }               
+        div li{
+            color: blue;
+        }
+        ol>span{
+            color: hotpink;
+        }
+        li+li{
+            color: green;
+        }
+        li~li{
+            color: lime;
+        }
+
+        div{
+            background-color: whitesmoke;
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        /* rule이라는 클래스 중, strong 태그에 해당하는 것만 바꿀래! */
+        strong.rule{
+            display: block;
+            background-color: yellow;
+            width: 100%;
+        }
+        strong{
+            color: red !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <strong class="rule">나만의 간장계란밥 레시피!</strong>
+        <ol>
+            <li>계란을 안 뒤집고 굽는다</li>
+            <li>밥에 간장이랑 참기름을 넣는다</li>
+            <span>(짜게 만들자!!!)</span>
+            <li>계란을 넣고 깨 팍팍!!</li>
+        </ol>
+    </div>
+
+
+</body>
+</html>

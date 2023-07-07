@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all{
+            width: 600px;
+            margin-left: 400px;
+            
+        }
+        .all>div{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+            
+            margin-left: 100px;
+        }
+        #green{
+            background-color: green;
+            margin-left: 200px;
+        }
+        #gray{
+            background-color: gray;
+            margin-left: 300px;
+        }
+        #yellow{
+            background-color: yellow;
+            margin-bottom: 120px;
+        }
+        /* margin 상쇄현상 */
+        /* 같은 영역에 마진이 겹쳐서 적용되면
+        그 중 더 큰 마진으로 적용된다 (누적되지 않음!!) */
+        #pink{
+            position: absolute;
+            background-color: pink;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div id="red"></div>    
+        <div id="blue"></div>    
+        <div id="green"></div>    
+        <div id="gray"></div>   
+
+        <div id="yellow"></div>    
+        <div id="pink"></div>    
+    </div>
+    
+</body>
+</html>
