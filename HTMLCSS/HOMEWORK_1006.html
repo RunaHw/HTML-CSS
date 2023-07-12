@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            body {
+                background-color: #333; 
+            }
+
+            #big {
+                width: 1000px;
+                border: 10px solid white;
+                margin: 20px auto;
+                display: block;
+            }
+
+            #small { 
+                margin-top: 20px; 
+                margin-left: 480px;
+            }
+
+            #small > li { 
+                list-style: none;
+                float: left;
+                margin-right: 20px;
+            }
+            #small > li > img {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img id="big" src="https://i.imgur.com/7Mu8BZg.png" alt="big-picture">
+            <ul id="small">
+                <li><img src="https://i.imgur.com/7Mu8BZg.png" alt="first-small-picture"></li>
+                <li><img src="https://i.imgur.com/kwD72gU.png" alt="second-small-picture"></li>
+                <li><img src="https://i.imgur.com/qOU9yuQ.png" alt="third-small-picture"></li>
+            </ul>
+        </div>
+        <script>
+
+            var big = document.querySelector("#big");
+            var select = document.querySelectorAll("#small > li > img");
+
+            for (var i = 0; i < select.length; i++) {
+                select[i].addEventListener("click", function () {
+                    big.src = this.src;
+                });
+            }
+        </script>
+    </body>
+</html>

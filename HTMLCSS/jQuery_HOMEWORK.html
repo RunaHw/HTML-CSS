@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+            body{
+                background-color: #999999;
+            }
+            #lists{
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1200px;
+            }
+
+            #lists::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            #lists > li {
+                float: left;
+                margin: 0 5px;
+                border: thin solid cyan;
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+                box-sizing: border-box;
+            }
+            #lists > li > a {
+                display: block;
+
+            }
+            #lists > li > a > img{
+                display: block;
+                width: 200px;
+            }
+            /* 오버레이 */
+            #overlay{
+                position: fixed;
+                top: 0; right: 0; bottom: 0; left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                border: thin solid cyan;
+                display: none;
+            }
+            #overlay >:first-child{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 1000px;
+                border: 5px solid cyan;
+                display: none;
+            }
+            #overlay > div > img{
+                width: 100%;
+            }
+            #icon{
+                position: fixed;
+                top: 40px; right: 60px;
+                width: 60px;
+                height: auto;
+                cursor: pointer;
+            }
+            #icon > img{
+                width: 100%;
+            }
+            #icon:hover{
+                transform: scale(1.5);
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function(){
+                var $listPic = $("#lists > li > a > img");
+                var $overlay = $("#overlay");
+                var $content = $("#content");
+                var $contentPic = $("#content > img");
+                var $icon = $("#icon");
+
+                $listPic.on("click", function(event){
+                    event.preventDefault();
+                    $overlay.fadeIn(400, function(){
+                        $content.fadeIn(400);
+                    });
+                    $contentPic.attr("src", this.src);
+                });
+
+                $icon.on("click", function(){
+                    $content.fadeOut(400, function(){
+                        $overlay.fadeOut(400);
+                    });
+                })
+            })
+
+        </script>
+
+    </head>
+    <body>
+        <ul id="lists">
+            <li>
+                <a href="https://i.imgur.com/RDQGlFG.png"><img src="https://i.imgur.com/7Mu8BZg.png" alt="photo1"></a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/VaVlu0Y.png"><img src="https://i.imgur.com/kwD72gU.png" alt="photo2"></a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/AJkIaya.png"><img src="https://i.imgur.com/qOU9yuQ.png" alt="photo3"></a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/Y51UhBK.png"><img src="https://i.imgur.com/YfsvbdE.png" alt="photo4"></a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/gbPCnTb.png"><img src="https://i.imgur.com/3KWpPQv.png" alt="photo5"></a>
+            </li>
+        </ul>
+        <div id="overlay">
+            <div id="content"><img src="https://i.imgur.com/7Mu8BZg.png" alt="content_picture"></div>
+            <div id="icon"><img src="https://i.imgur.com/BRdH9in.png"></div>
+        </div>
+    </body>
+</html>

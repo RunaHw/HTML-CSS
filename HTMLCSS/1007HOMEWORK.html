@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            /* 헤더 영역*/
+            #header > h1{
+                font-weight: bold;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+                font-size: 3em;
+                line-height: 100px;
+                margin: 20px 50px;
+            }
+
+            /* 내비게이션 영역 */
+            #nav{
+                
+                
+                background-color: #666;
+                font-size: 1.2em;
+                color: white;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+            }
+
+            #nav::after { 
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            #nav > ul:first-child{float: left;}
+            #nav > ul:last-child{float: right;}
+
+            #nav > ul > li {
+   
+                float: left;
+            }
+
+
+            #nav > ul > li > a {
+                display: block;
+                padding: 1em 2em;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            /* 본문 영역 */
+
+            #container{
+                overflow: hidden;
+                width: 100%;
+                display: inline-block;
+            }
+
+            #sidebar{
+                width: 200px;
+                float: left;
+            }
+
+            #sidebar > ul > li > a {
+                padding: 0.8em 1.5em;
+                display: block;
+                text-decoration: none;
+            }
+
+            #wrap{
+                float: left;
+                width: 100%;
+                margin-right: -200px;
+                
+            }
+
+            #content{
+                margin-right: 200px;
+                padding: 2em;
+                border-left: 1px solid #aaa;
+            }
+
+            #content > h2 {
+                font-weight: bold;
+                font-size: 2em;
+                margin-bottom: 1em;
+            }
+
+            #content > p{
+                line-height: 1.5em;
+                margin-top: 1em;
+            }
+
+            /* 푸터 영역 */
+            #footer {
+                margin-top: 2em;
+                text-align: right;
+                padding: 3em;
+                background-color: #666;
+                font-size: smaller;
+            }
+           
+            /* 작은 메뉴 바*/
+            .small_menu > li > a{
+                text-decoration: none;
+                color: inherit;
+                display: block;
+                text-shadow: none;
+            }
+
+            #nav > ul{
+                position: relative;
+            }
+            .small_menu > li{
+                padding: 1em 1em;
+            }
+
+            .small_menu{
+                position: absolute;
+                background-color: #666;
+                margin-top: 3px;
+                border: 1px solid #666;
+                border-radius: 5px ;
+                display: none;
+            }
+
+        </style>
+        <script>
+            
+            window.addEventListener("load", function(){
+                var mini = document.querySelectorAll("#nav > ul:first-child > :not(li:first-child)"); 
+
+                for(var i=0; i < mini.length; i++) {
+                    mini[i].addEventListener("click", function() {
+
+                if(this.children[1].style.display == "block") 
+                {
+                  this.children[1].style.display = "none";
+                } 
+                else 
+                {
+                    for(var j=0; j< mini.length; j++) {
+                        mini[j].children[1].style.display = "none";
+                    }
+                        this.children[1].style.display = "block";
+                }
+                });
+                }
+            });
+            
+        </script>
+    </head>
+
+    <body> 
+        <header id="header"><h1>Fluid Layout</h1></header>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+
+                <li>
+                    <a href="#html">HTML</a>
+                    <ul class="small_menu">
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#css">CSS</a>
+                    <ul class="small_menu">
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#javascript">JavaScript</a>
+                    <ul class="small_menu">
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#jquery">jQuery</a>
+                    <ul class="small_menu">
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#singup">Sign up</a></li>
+            </ul>
+        </nav>
+
+        <div id="container">
+            <aside id="sidebar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#HTML">HTML</a></li>
+                    <li><a href="#CSS">CSS</a></li>
+                    <li><a href="#JavaScript">JavaScript</a></li>
+                    <li><a href="#jquery">jQuery</a></li>
+                </ul>
+            </aside>
+            <div id="wrap">
+
+                <article id="content">
+                    <h2>Loerm ipsum dolor sit amet</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mauris quis tristique eros, vel placerat eros. Pellentesque habitant
+                        morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse pharetra molestie lacus vitae
+                        fermentum. Sed efficitur condimentum scelerisque. Donec hendrerit nisi lectus, et facilisis massa pulvinar id. Praesent
+                        efficitur ornare mi nec elementum. Suspendisse dignissim urna eget est aliquam egestas a ut mi. Maecenas auctor lacus a
+                        augue pharetra, congue dapibus convallis.
+                    </p>
+                    <p>
+                        Phasellus quis condimentum erat. Quisque eget nunc et nisi lobortis Pellentesque ac eu erat. Nullam viverra neque in
+                        aliquam tristique. Quisque eu quam sed metus faucibus pellentesque vel ut ligula. Nulla in cursus lacus. Fusce ac odio eu
+                        risus iaculis molestie convallis ac ipsum. Nulla justo est, lacinia ac volutpat sit amet, maximus vel mauris.
+                    </p>
+                    <p>
+                        Fusce dapibus aliquam purus. Vivamus in magna ut imperdiet auctor. Donec nisl lectus, laoreet nec convallis eget,
+                        tincidunt ac tellus. Phasellus fermentum leo eget quam tincidunt congue. Donce imperdiet, lacus in posuere dignissim, dui
+                        lectus posuere. In posuere nulla lacus et sapien. Morbi mattis nec diam fringilla. Sed ut justo nec lorem maximus aliquet.
+                        Nunc lacinia ornare accumsan.
+                    </p>
+            </div><!-- /#wrap-->
+            </article>
+        </div><!-- /#container-->
+
+        <footer id="footer">
+            &copy; 2022-10-08 HOMEWORK
+        </footer>
+
+        
+
+    </body>
+</html>

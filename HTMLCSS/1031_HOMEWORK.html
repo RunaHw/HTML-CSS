@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+            img{ display: block; width: 100%;}
+            #imagegallery::after{ content: ""; clear: both; display: block; }
+            #imagegallery{ margin: 20px; }
+            #imagegallery > li{ 
+                float: left; 
+                border: 5px solid cyan;
+                margin-left: 10px;
+            }
+            #imagegallery > li > a {
+                display: block;
+            }
+            #imagegallery > li > a > img{
+                display: block;
+            }
+            /* */
+            #layer{
+                position: fixed;
+                top: 0; right: 0; bottom: 0; left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                border: thin solid cyan;
+                display: none;
+            }
+
+            #content{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: thick solid cyan;
+                width: 1000px;
+                display: none;
+            }
+            #content > img{ 
+                display: block;
+                width: 100%;
+            }
+            /* */
+            #layer > div { float: left;}
+            #del{
+                position: absolute;
+                top: 20px;
+                right: 40px;
+                width: 100px;
+                cursor: pointer;
+            }
+            #del > img{ display: block; width: 100%;}
+            #next{
+                position: absolute;
+                top: 50%;
+                left: 88%;
+                width: 60px;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+            #back {
+                position: absolute;
+                top: 50%;
+                left: 100px;
+                width: 60px;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+            #del:hover{transition-duration: 200ms; transform: scale(1.2);}
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function(){
+                var $lists = $("#imagegallery > li > a");
+                var $layer = $("#layer");
+                var $content = $("#content");
+                var $contentImg = $("#content > img");
+                var $del = $("#del"); var $next = $("#next"); var $back = $("#back");
+                var index = 0;
+
+                $lists.on("click", function(event){
+                    event.preventDefault();
+
+                    $contentImg.attr("src", this.href); 
+                    $layer.fadeIn(200, function(){
+                        $content.fadeIn(200);
+                    });
+                    index = $lists.index(this);
+                })
+
+                $del.on("click", function(){
+                    $content.fadeOut(200, function(){
+                        $layer.fadeOut(200);
+                    })
+                })
+
+                $next.on("click", function(){
+                    index++;
+                    if(index >= $lists.length) index = 0;
+                    slide();
+                })
+
+                $back.on("click", function(){
+                    index--;
+                    if(index < 0) index = $lists.length-1;
+                    slide();
+                })
+                /* */
+                function slide(){
+                    $content.fadeOut(200, function () {
+                        $contentImg.attr("src", $lists.eq(index).attr("href"));
+                        $(this).fadeIn(200);
+                    });
+                }
+                
+            })
+        </script>
+    </head>
+    <body>
+
+        <ul id="imagegallery">
+            <li><a href="https://i.imgur.com/7Mu8BZg.png"><img src="https://i.imgur.com/RDQGlFG.png" alt="photo1"></a></li>
+            <li><a href="https://i.imgur.com/kwD72gU.png"><img src="https://i.imgur.com/VaVlu0Y.png" alt="photo2"></a></li>
+            <li><a href="https://i.imgur.com/qOU9yuQ.png"><img src="https://i.imgur.com/AJkIaya.png" alt="photo3"></a></li>
+            <li><a href="https://i.imgur.com/YfsvbdE.png"><img src="https://i.imgur.com/Y51UhBK.png" alt="photo4"></a></li>
+            <li><a href="https://i.imgur.com/3KWpPQv.png"><img src="https://i.imgur.com/gbPCnTb.png" alt="photo5"></a></li>
+        </ul>
+
+        <div id="layer">
+            <div id="back"><img src="https://i.imgur.com/DBK27Kx.png"></div>
+            <div id="content"><img src="https://i.imgur.com/7Mu8BZg.png" alt="content_picture"></div>            
+            <div id="next"><img src="https://i.imgur.com/pw4Yfrt.png"></div>
+            <div id="del"><img src="https://i.imgur.com/BRdH9in.png"></div>
+        </div>
+
+    </body>
+</html>

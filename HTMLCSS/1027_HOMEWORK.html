@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+            /* 공통 */
+            a{
+                color: inherit;
+                text-decoration: none;
+                display: block;
+            }
+            #header, #mainmenu, #content, #submenu{
+                width: 960px;
+                margin: 0 auto;
+            }
+            /* 헤더 영역*/
+            header > h1{
+                text-align: center;
+                font-weight: bold;
+                font-size: 48px;
+                line-height: 2.5em;
+            }
+
+            /* 메인 메뉴 */
+            #mainmenu::after{ content: ""; display: block; clear: both;}
+            #nav{
+                position: relative;
+                border: 3px solid rgb(0, 157, 255);
+                border-left: none;
+                border-right: none;
+                margin-top: 20px;
+                
+            }
+            #mainmenu > li {
+                list-style: square;
+                position: relative;
+                float: left;
+                width: 25%;
+                height: 100%;
+                text-align: center;
+            }
+            #mainmenu > li > a::after{
+                position: absolute;
+                content:"";
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border-bottom: 5px solid rgb(0, 157, 255);
+                width: 0%;
+                transition-duration: 400ms;
+            }
+
+            #mainmenu > li > a{
+                font-size: 1.5em;
+                width: 100%;
+                line-height: 2.5em;
+            }
+            #mainmenu > li > a:hover::after{
+                width: 100%;
+            }
+            
+            /* article & content 영역*/
+            #content{ margin-top: 40px;}
+            #content > p{
+                font-size: 1.5em;
+                line-height: 2em;
+            }
+
+            /* 서브 메뉴*/
+            #wrap {
+                color: white;
+                position: absolute;
+                display: none;
+                background: rgba(0,0,0,0.9);
+                width: 100%;
+                border-bottom: 3px solid rgb(0, 157, 255);
+            }
+            #submenu::after{ content: ""; display: block; clear: both;}
+            #submenu{ padding-left: 90px;}
+            #submenu > ul{
+                float: left;
+                width: 25%;
+                box-sizing: border-box;
+                margin: 20px 0;
+            }
+            #submenu > ul > li > a{
+                text-align: left;
+                font-size: 1.4em;
+                line-height: 2em;
+                padding: 5px 0px 5px 40px;
+            }
+            #submenu > ul > li > a:hover{
+                background-color: #333333;
+                transform: scale(1.05);
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function(){
+                var $submenu = $("#submenu");
+                var $wrap = $("#wrap");
+                var $mainmenu = $("#mainmenu");
+                var $nav = $("#nav");
+
+                /* wrap을 nav의 보더 밑에 주고 싶은데 보더 값이나 nav의 높이가 달라질때 수정하기 싫어서
+                   이렇게 작성했는데 좀 더 편한 방법이 있을까요?*/
+                var borderVal = ($nav.outerHeight() - $nav.innerHeight()) / 2;
+                $wrap.css("top", $nav.outerHeight() - borderVal + "px");
+
+                $mainmenu.on("click", function(event){
+                    event.preventDefault();
+                    $wrap.slideDown();
+                });
+
+                $submenu.on("click", function(event){
+                    event.preventDefault();
+                });
+
+                $nav.mouseleave(function(){
+                    $wrap.slideUp();
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <header id="header">
+            <h1>My Work</h1>
+        </header>
+
+        <nav id="nav">
+                <ul id="mainmenu">
+                    <li><a href="html">HTML</a></li>
+                    <li><a href="css">CSS</a></li>
+                    <li><a href="javascript">JavaScript</a></li>
+                    <li><a href="jquery">jQuery</a></li>
+                </ul>        
+            <div id="wrap">
+                <nav id="submenu">
+                    <ul>
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="tutorial">Tutorial</a></li>
+                        <li><a href="reference">Reference</a></li>
+                        <li><a href="example">Example</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav> 
+
+        <article id="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                nisi ut aliquip ex ea commodo consequat. 
+                Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                anim id est laborum. Sed ut perspiciatis unde omnis iste natus error 
+                sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
+                eaque ipsa quae ab illo inventore veritatis et quasi architecto 
+                beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur 
+                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro 
+                quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
+                adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
+                labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima 
+                veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
+                nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure 
+                reprehenderit qui in ea voluptate velit esse quam nihil molestiae 
+                consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+            </p>
+        </article>
+
+    </body>
+</html>

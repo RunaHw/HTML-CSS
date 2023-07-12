@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+            p {
+                line-height: 2em;
+                margin-left: 20px ;
+            }
+            .tooltip{
+                border-bottom: thin dotted black;
+            }
+            .newtool{
+                position: absolute;
+                background-color: #999999;
+                padding: 1.5em;
+                border-radius: 10px;
+                display: none;
+            }
+            .tooltip:hover > .newtool{
+                display: block;
+            }
+            
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function(){
+                var $tooltip = $(".tooltip");
+                $tooltip.each(function(){
+                    $("<div></div>").addClass("newtool").html($(this).attr("title")).appendTo(this);
+                    $(this).removeAttr("title");
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <p><span title="Hyper-Text Markup Language" class="tooltip">HTML</span>
+        is the language for building web pages.</p>
+        <p><span title="Cascading Style Sheet" class="tooltip">CSS</span>
+        is a language that describes the style of an HTML document.</p>
+    </body>
+</html>

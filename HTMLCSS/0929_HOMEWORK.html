@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>0929_HOMEWORK</title>
+        <style>
+            #list > li {
+                list-style: none;
+                line-height: 2em;
+                text-align: center;
+                
+            }
+
+            #list {
+                margin-top: -2px;
+            }
+
+            #news-ticker{
+                border: 5px solid rgb(32, 218, 199);
+                margin: 20px auto;
+                height: 2em;
+                width: 400px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="news-ticker">
+            <ul id="list">
+                <li class="box">1. Time is gold.</li>
+                <li class="box">2. No sweat, no sweet.</li>
+                <li class="box">3. Asking costs nothing.</li>
+                <li class="box">4. Step by step goes a long way.</li>
+                <li class="box">5. You will never know until you try.</li>
+            </ul>
+        </div>
+
+        <pre><script>
+
+            var i = 1;
+            var list = document.getElementById("list")
+
+            window.setInterval(function(){
+                
+                list.style.marginTop = (-i * 2) + "em";
+                i++;
+                i %= 5;
+            },2000)
+
+        </script></pre>
+
+    </body>
+</html>

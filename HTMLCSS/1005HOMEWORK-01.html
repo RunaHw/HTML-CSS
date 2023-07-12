@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+
+            #step, #toggle{
+                margin: 40px 100px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <h1 id="step">Step be step goes a long way.</h1>
+        <p>
+            <button id="toggle">TOGGLE</button>
+        </p>
+
+        <script>
+
+            var step = document.getElementById("step");
+            var toggle = document.getElementById("toggle");
+
+            toggle.onclick = function(){
+                if(toggle.innerHTML == "RESET"){
+                    step.style.color = "black";
+                    toggle.innerHTML = "TOGGLE";
+                }
+                else{
+                    step.style.color = "red";
+                    toggle.innerHTML = "RESET";
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

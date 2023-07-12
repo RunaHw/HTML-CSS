@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>1011HOMEWORK</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            body{
+                background-color: #444;
+            }
+
+            #gallerylist{
+                max-width: 1400px;
+                width: 100%;
+                text-align: center;
+                display: inline-block;
+                margin-top: 20px;
+                margin-left: 10%
+                
+            }
+            #gallerylist > img{
+                display: inline-block;
+                width: 15%;
+                height: auto;
+                border: thin solid white;
+                margin: 5px;
+            }
+
+            #overlay{
+                position: fixed;
+                display: block;
+                display: none;
+                top: 0; 
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            #overlay > img{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border: thick solid white;
+                width: 1200px;
+                height: auto;
+            }
+
+        </style>
+        <script>
+
+            window.addEventListener("load", function(){
+                //--------------------------------------------
+                // 작은 사진을 클릭하면 overlay사진으로 이동후
+                // overlay display를 block으로 처리
+                // gallerylist의 해상도를 낮추기
+                var lists = document.querySelectorAll("#gallerylist > img");
+                var overlay = document.getElementById("overlay");
+                var overlayPicture = document.querySelector("#overlay > img") 
+                var gallery = document.getElementById("gallerylist");
+
+                for (var i = 0; i < lists.length; i++){
+                    lists[i].addEventListener("click", function(){
+                        overlayPicture.src = this.src;
+                        overlay.style.display = "block";
+                        gallery.style.opacity = 0.3;
+                    });
+                }
+
+                overlay.addEventListener("click", function(){
+                    overlay.style.display = "none";
+                    gallery.style.opacity = 1;
+                })
+
+                
+
+            });
+        </script>
+    </head>
+    <body id="body">
+
+        <div id="gallerylist">
+            <img src="https://i.imgur.com/7Mu8BZg.png" alt="thumbnail">
+            <img src="https://i.imgur.com/kwD72gU.png" alt="thumbnail">
+            <img src="https://i.imgur.com/qOU9yuQ.png" alt="thumbnail">
+            <img src="https://i.imgur.com/YfsvbdE.png" alt="thumbnail">
+            <img src="https://i.imgur.com/3KWpPQv.png" alt="thumbnail">
+        </div>
+
+        <div id="overlay">
+            <img id="photo" src="https://i.imgur.com/7Mu8BZg.png" alt="">
+        </div>
+
+    </body>
+</html>

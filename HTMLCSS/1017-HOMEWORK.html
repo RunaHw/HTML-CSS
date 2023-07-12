@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+            #content{
+                width: 1000px;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                border: 10px solid blue;
+                overflow: hidden;
+            }
+
+            #ul{
+                width: 500%;
+            }
+
+            #ul > li{
+                width: 20%;
+                float: left;
+            }
+
+            #ul::after {content: ""; display: block; clear: both;}
+
+            #ul > li > img 
+            {
+                width: 100%;
+                display: block;
+            }
+
+        </style>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script>
+           
+            $(function(){
+                var $ul = $("#ul");
+                var i = 1;
+
+                window.setInterval(function(){
+                    $ul.css("marginLeft", i++ * -100 + "%");
+                    i %= $ul.children().length;
+                }, 3000)
+            })
+
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <ul id="ul">
+                <li><img src="https://i.imgur.com/7Mu8BZg.png" alt="image1"></li>
+                <li><img src="https://i.imgur.com/kwD72gU.png" alt="image1"></li>
+                <li><img src="https://i.imgur.com/qOU9yuQ.png" alt="image1"></li>
+                <li><img src="https://i.imgur.com/YfsvbdE.png" alt="image1"></li>
+                <li><img src="https://i.imgur.com/3KWpPQv.png" alt="image1"></li>
+            </ul>
+        </div>
+    </body>
+</html>

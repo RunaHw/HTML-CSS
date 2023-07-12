@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+
+            #banner{
+                margin-top: 100px;
+                width: 100%;
+                border-top: 5px solid cyan;
+                border-bottom: 5px solid cyan;
+            }
+
+            #imglist{
+                width: 500%;
+            }
+            #imglist::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            #imglist > li{
+                width: 20%;
+                float: left;
+            }
+            #imglist > li > img{
+                width: 100%;
+                display: block;
+                height: 600px;
+            }
+
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function(){
+                var $imgList = $("#imglist");
+                var timer = window.setInterval(slide , 2000);
+
+                $imgList.hover(
+                    function(){
+                        window.clearInterval(timer);
+                    },
+                    function(){
+                        timer = window.setInterval(slide, 2000);
+                    }
+                );
+
+                function slide(){ 
+                    $imgList.css("transitionDuration", "500ms").css("marginLeft", -100 + "%");
+                    window.setTimeout(function(){
+                        $imgList.removeAttr("style").children(":first").appendTo($imgList);
+                    }, 1000);
+                };
+
+            });
+
+        </script>
+    </head>
+    <body>
+
+        <div id="banner">
+            <ul id="imglist">
+                <li><img src="https://i.imgur.com/mP2h66E.png" alt="photo1"></li>
+                <li><img src="https://i.imgur.com/6KmJ4YG.png" alt="photo2"></li>
+                <li><img src="https://i.imgur.com/LHbLmZs.png" alt="photo3"></li>
+                <li><img src="https://i.imgur.com/yw9U0QQ.png" alt="photo4"></li>
+                <li><img src="https://i.imgur.com/Ox0NEVM.png" alt="photo5"></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

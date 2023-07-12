@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+            #dream{
+                background-color: #444;
+                width: 200px;
+                height: 200px;
+                text-align: center;
+                line-height: 200px;
+            }            
+        </style>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script>
+            $(function(){
+
+                window.setTimeout(function(){
+                    $("#dream").css("transitionDuration", "1s").css("opacity", "0");
+                    
+                }, 3000)
+
+            })
+        </script>
+    </head>
+    <body>
+
+        <h1 id="dream">Dream comes true!</h1>
+
+    </body>
+</html>

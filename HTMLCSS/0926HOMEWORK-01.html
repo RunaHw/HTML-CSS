@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>0926_HOMEWORK</title>
+    </head>
+    <body>
+
+        <pre>
+            <script>
+
+                /*  
+                window.setTimeout(function(){
+                    console.log("Time is gold.");
+                },2000);
+                
+                window.setTimeout(function(){
+                    console.log("No sweat, no sweet.");
+                },4000);
+                
+                window.setTimeout(function(){
+                    console.log("Asking costs nothing");
+                },6000);
+                
+                window.setTimeout(function(){
+                    console.log("Step by step goes a long way.");
+                },8000);
+                
+                window.setTimeout(function(){
+                    console.log("You will never know until you try.");
+                },10000);
+                */
+                //-------------------------------------------------------------
+                
+                var arr = [
+                    "Time is gold.",
+                    "No sweat, no sweet.",
+                    "Asking costs nothing",
+                    "Step by step goes a long way.",
+                    "You will never know until you try."
+                ]
+
+                var count = 0;
+
+                function say(){
+                    if(count == arr.length-1)
+                        clearInterval(timerId);
+                    console.log(arr[count]);
+                    count++;
+                }
+
+
+                var timerId = setInterval(say, 2000);
+               
+
+
+            </script>
+        </pre>
+
+    </body>
+</html> 

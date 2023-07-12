@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK2</title>
+        <style>
+            #content {
+                border: solid 2px #333;
+                margin: 0 auto;
+                width: 440px;
+                padding: 10px;
+            }
+                     
+            #content::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+   
+            .box {
+                width: 200px;
+                text-align: center;
+                box-sizing: border-box;
+                height: 100px;
+                line-height: 100px;
+            }
+
+            #content > .box:first-child {
+                background-color: pink;
+                margin: 10px;
+                float: left;
+            }
+
+            #content > .box:nth-child(2) {
+
+                height: 220px;
+                line-height: 220px;
+                background-color: gold;
+                float: right;
+                margin: 10px;
+            }
+            
+            #content > .box:nth-child(3) {
+                background-color: yellowgreen;
+                margin: 10px;
+                float: left;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div class="box">Pink</div>
+            <div class="box">Gold</div>
+            <div class="box">Yellowgreen</div>
+        </div>
+    </body>
+</html>

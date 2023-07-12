@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEWORK</title>
+        <link rel="stylesheet" href="http://mooozi.github.io/css/reset.css">
+        <style>
+
+            #content{
+                position: relative;
+                margin: 20px auto;
+                width: 400px;
+            }
+
+            #click > li:first-child {
+                text-align: center;
+                width: 200px;
+                box-sizing: border-box;
+                float: left;
+                font-weight: bold;
+                border-top: thin solid black;
+                border-right: thin solid black;
+                border-left: thin solid black;
+                cursor: pointer;
+                line-height: 3em;
+            }
+
+            #click > li:last-child{
+                width: 200px;
+                box-sizing: border-box;
+                text-align: center;
+                float: right;
+                font-weight: bold;
+                border-bottom: thin solid black;
+                background-color: #999999;
+                cursor: pointer;
+                line-height: 3em;
+            }
+            
+            #click::after{
+                display: block;
+                content: "";
+                clear: both;
+            }
+
+            /* 리스트 */
+            #front, #back{
+                border-bottom: thin solid black;
+                border-right: thin solid black;
+                border-left: thin solid black;
+            }
+
+            #front > li, #back > li{
+                padding: 10px;
+            }
+
+            #back{
+                position: absolute;
+                width: 400px;
+                top: 49px;
+                left: 0%;
+                box-sizing: border-box;
+                visibility: hidden;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script>
+
+            $(function(){
+                var $click = $("#click > li");
+                var $back = $("#back");
+                var $front = $("#front");
+                var count = 1;
+                var other_count = 0;
+
+
+                $click.eq(1).on("click", function(){
+                    style_swap(count, other_count);
+                    count++;
+                    $back.css("visibility", "visible");
+                    $front.css("visibility", "hidden");
+                    if(count >= 2) count = 0;
+                    other_count++
+                    if(other_count >= 2) other_count = 0;
+
+                });
+
+                $click.eq(0).on("click", function(){
+                    style_swap(count, other_count);
+                    count++;
+                    $front.css("visibility", "visible");
+                    $back.css("visibility", "hidden");
+                    if(count >= 2) count = 0;
+                    other_count++
+                    if(other_count >= 2) other_count = 0;
+                });
+                
+                function style_swap(){
+                    $click.eq(count).css("background-color", "white");   
+                    $click.eq(other_count).css("background-color", "#999999");  
+                    $click.eq(count).css("border", "none");       
+                    $click.eq(other_count).css("border", "none");          
+                    $click.eq(other_count).css("border-bottom", "thin solid black");               
+                    $click.eq(count).css("border-left", "thin solid black");               
+                    $click.eq(count).css("border-top", "thin solid black");                
+                    $click.eq(count).css("border-right", "thin solid black");        
+                };
+
+            })
+
+        </script>
+    </head>
+    <body>
+
+        <div id="content"> 
+            <ul id="click">
+                <li>Front-End</li>
+                <li>Back-End</li>
+            </ul>
+            <ul id="front">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+            </ul>
+            <ul id="back"> 
+                <li>PHP</li>
+                <li>ASP</li>
+                <li>JSP</li>
+                <li>MySQL</li>
+            </ul>
+        </div>
+
+
+    </body>
+</html>

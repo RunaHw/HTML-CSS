@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>0928_HOMEWORK</title>
+    </head>
+    <body>
+
+        <h1 id="best">DO YOUR BEST!</h1>
+
+        <script>
+
+            var count = 0;
+
+            var color_arr = ["red", "blue", "green", "yellow"]
+
+            var best = document.getElementById("best");
+
+            window.setInterval(function(){
+
+                best.style.color = color_arr[count];
+                count++;
+                if(count == 4) count = 0;
+                
+            }, 2000)
+
+        </script>
+
+    </body>
+</html>
