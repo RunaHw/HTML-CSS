@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #wrap{
+            width: 100%;
+            height: 100%;
+            border: 3px solid black;
+            box-sizing: border-box;
+            /*
+             * 두번째 방법!
+             * position : fixed;
+             * --> div를 브라우저 기준으로 배치할 수 있도록 해준다.
+             *     높이, 너비를 브라우저 기준으로 맞춰준다. 
+             */
+        }
+        #header{
+            height: 15%;
+            width: 100%;
+            background-color: rgb(196, 255, 235);
+            border-bottom: 5px solid black;
+            box-sizing: border-box;
+        }
+
+        #side{
+            float: left;
+            background-color: rgb(155, 119, 189);
+            width: 15%;
+            height: 70%;
+
+        }
+        #main{
+            float: left;
+            background-color: rgb(125, 181, 149);
+            width: 70%;
+            height: 70%;
+            border-left: 5px solid black;
+            border-right: 5px solid black;
+            box-sizing: border-box;
+        }
+        #ad{
+            float: left;
+            background-color: rgb(180, 207, 126);
+            width: 15%;
+            height: 70%;
+            
+        }
+        #footer{
+            clear: both;
+            width: 100%;
+            height: 15%;
+            background-color: rgb(206, 142, 142);
+            border-top: 5px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="side"></div>
+        <div id="main"></div>
+        <div id="ad"></div>
+        <div id="footer"></div>
+    </div>
+
+
+</body>
+
+</html>

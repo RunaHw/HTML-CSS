@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #parents{
+            position: relative;
+        }
+        .in{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            color: white;
+            line-height: 100px;
+           
+        }
+        #red{
+            position: absolute;
+            background-color: red;
+            z-index: 100;
+            /* 
+             * z-index = 요소의 쌓이는 순서를 지정하는 방법(특정값을 가지고 있지는 않다)
+             *  - 더 큰수를 가진 요소를 위로 올려준다.
+             *  - static일 때는 사용할 수 없다.
+             */
+        }
+        #yellow{
+            background-color: yellow;
+            position: absolute;
+            top: 50px;
+            z-index: 99;
+        }
+        #blue{
+            background-color: blue;
+            position: absolute;
+            top: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="parents">
+        <div class="in" id="red">Child</div>
+        <div class="in" id="yellow">Child</div>
+        <div class="in" id="blue">Child</div>
+    </div>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #blackDiv {
+            margin: 0 auto;
+            width: 120px;
+            height: 360px;
+            background-color: black;
+            border-radius: 30px;
+            padding: 8px;
+            box-sizing: border-box;
+            
+        }
+
+        #blackDiv>div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 11px auto;
+
+        }
+
+        #redDiv {
+            background-color: red;
+
+        }
+
+        #yellowDiv {
+            background-color: yellow;
+        }
+
+        #greenDiv {
+            background-color: green;
+
+        }
+
+        #parents:active{
+            transform: translate(300px);
+            transition-duration: 500ms;
+        }
+
+        #blackDiv:hover {
+
+            transform: rotate(-90deg);
+            transition-duration: 1000ms;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="parents">
+        <div id="blackDiv">
+            <div id="redDiv"></div>
+            <div id="yellowDiv"></div>
+            <div id="greenDiv"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
