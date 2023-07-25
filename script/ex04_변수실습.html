@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <p>즐거운 수업시간!</p>
+
+
+
+    <script>
+        // 문제
+        // 사용자가 정보를 입력해주면 콘솔에 출력하는 프로그램을 구현하세요.
+        // 변수, prompt(), console.log() 활용! 
+
+        // 1. 강의장 번호를 num이라고 하는 변수에 저장
+        // 2. 사용자에게 입력받은 이름/ 좋아하는 과일을 변수에 저장
+        // 3. 강의장번호 , 이름, 좋아하는 과일을 콘솔창에 출력
+
+
+        // 결과 
+        // [이름을 입력해주세요] name
+        // [좋아하는 과일을 입력해주세요] fruits
+        // ---> 콘솔 [저는 -강의장의 ---입니다. 좋아하는 과일은 --입니다.  ]
+
+
+
+        let num = 7;
+        let name = prompt("이름을 입력해주세요");
+        let fruits = prompt("좋아하는 과일을 입력해주세요");
+
+        console.log("저는 " , num , "강의장의 " , name , "입니다." , "좋아하는 과일은" , fruits , "입니다.");
+        
+        // 더하기 연산자가 복잡할 때는 템플릿 연산자를 사용
+        // 백틱('') 사용. 변수를 넣을 때는 ${변수이름}
+        console.log(`난 ${num}반 ${name}이야. 과일은 ${fruits}`);
+        console.log();
+
+
+
+    </script>
+</body>
+</html>
