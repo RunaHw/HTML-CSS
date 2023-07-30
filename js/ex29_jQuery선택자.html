@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="div1">
+        <div id="div2">안녕 나는 div2야</div>
+        <div id="div3">div3이야</div>
+        <div id="div4">div4야</div>
+
+    </div>
+
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        // 자식요소 가져오는법
+        $("#div1 > div").html("응애")
+
+        // 부모요소 가져오는 법
+        console.log($("#div2").parents('div'));
+
+        // 이전 요소들을 가져오는 법
+        console.log($("#div4").prevAll());
+
+        // 다음 요소들을 가져오는 법
+        console.log($("#div2").nextAll());
+
+    </script>
+
+</body>
+</html>

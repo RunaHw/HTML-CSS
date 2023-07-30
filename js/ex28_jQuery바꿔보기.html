@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: auto;
+            height: auto;
+            max-width: 800px;
+            max-height: 400px
+        }
+        div{
+            margin : 0 auto;
+            width: 550px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="https://i.namu.wiki/i/SG9dcHX0o1cdCcwI6hsggTOCq_pgIXP1ZQpbj5A4Kl3Em3Jj9tFxiiJrapJgF3vTZp7oY6BqTHKa1pael60T4A.webp"
+            alt="ralo">
+    </div>
+
+
+
+
+
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        // 1. 이미지 변경 해보기
+        // 1-1. 제이쿼리로 이미지를 가지고 온 다음에 src 변경
+        $("img").mouseenter(function () {
+            $("img").attr("src", "https://img.seoul.co.kr/img/upload/2022/11/13/SSI_20221113232025_O2.jpg");
+        })
+        $("img").mouseleave(function () {
+            $("img").attr("src", "https://s3.orbi.kr/data/file/united/d5898fc21b2839831e4336fd5789377f.png");
+        })
+        // 2. 이미지의 크기 변경해보기
+
+    </script>
+
+</body>
+
+</html>

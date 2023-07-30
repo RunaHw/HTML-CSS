@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+
+        img {
+            max-width: 100%;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img id="img"
+            src="https://i.namu.wiki/i/PSTFI7Q4bEa4FUwrrlfiJZendY6DR7SJEchTjORTCejdqc6pb3TubRTg9Zb-vmqzOuC6SlmgTq2d3-1TgZG7tQ.svg"
+            alt="젠지">
+    </div>
+
+    <button id="btn" onclick="change()">이미지변경</button>
+    <script>
+        var img = document.getElementById("img");
+        var btn = document.getElementById("btn");
+
+        const change = function () {
+            if (img.src == "https://i.namu.wiki/i/PSTFI7Q4bEa4FUwrrlfiJZendY6DR7SJEchTjORTCejdqc6pb3TubRTg9Zb-vmqzOuC6SlmgTq2d3-1TgZG7tQ.svg") {
+                img.setAttribute("src", "https://m.jungle.co.kr/image/6d73692547388004c0331904")
+            }
+            else {
+                img.setAttribute("src", "https://i.namu.wiki/i/PSTFI7Q4bEa4FUwrrlfiJZendY6DR7SJEchTjORTCejdqc6pb3TubRTg9Zb-vmqzOuC6SlmgTq2d3-1TgZG7tQ.svg")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

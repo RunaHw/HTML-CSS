@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>0</p>
+
+    <!-- onclick : 자바스크립트 클릭 이벤트 여기서는 호출할 떄 ()를 붙여줘야 한다.  -->
+    <button id="inc">증가</button>
+    <button id="des">감소</button>
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+
+        var inc = $("#inc");
+        var des = $("#des");
+        var p = $("p");
+        var num = parseInt($("p").text());
+
+
+        inc.on("click", function () {
+            var num = parseInt($("p").text());
+            num += 1;
+            console.log(num);
+            p.html(num);
+        })
+
+        des.on("click", function () {
+                var num = parseInt($("p").text());
+                num -= 1;
+                p.text(num);
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>0</p>
+
+    <!-- onclick : 자바스크립트 클릭 이벤트 여기서는 호출할 떄 ()를 붙여줘야 한다.  -->
+    <button id="inc" onclick="plusNumber()">증가</button>
+    <button id="des">감소</button>
+    <script>
+        // 증감 감소 구현
+        var p = document.getElementsByTagName("p")[0];
+        var inc = document.getElementById("inc");
+        var des = document.getElementById("des");
+
+        const plusNumber = function () {
+            var num = parseInt(p.textContent);
+            num += 1;
+            p.innerHTML = "<p>" + num + "</p>";
+            // console.log(document.getElementsByTagName("p")[1]);
+        }
+
+        const minusNumber = function () {
+            var num = parseInt(p.textContent);
+            if (num == 0) {
+                num = 0;
+            } else {
+
+                num -= 1;
+            }
+            p.innerHTML = "<p>" + num + "</p>";
+        }
+
+        //inc.addEventListener("click", plusNumber);
+
+        des.addEventListener("click", minusNumber);
+
+        
+
+
+    </script>
+</body>
+
+</html>
