@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button>추가</button>
+    <div></div>
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        // 사용자의 입력값이 '강아지'면 강아지 사진을 input 태그아래에 추가
+        // '고양이'면 고양이사진을 추가
+        // 하지만 사진은 제일 최근에 추가한 사진이 위로 오게!
+        $('button').on('click',function(){
+
+            if($('input').prop('value')=='강아지'){
+                img=""
+                $('div').prepend("<br><img src='https://bareunnutri.com/files/attach/images/2022/09/27/5c57dff92db5acaf823a99df3e4b5c65.jpg'>");
+
+                
+            }else if($('input').prop('value')=='고양이'){
+
+                $('div').prepend("<br><img src='https://img.freepik.com/free-photo/adorable-kitty-looking-like-it-want-to-hunt_23-2149167099.jpg?w=2000'>");
+
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>
